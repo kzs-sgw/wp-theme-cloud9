@@ -1,0 +1,175 @@
+$white: #fffffb;
+$black: #08192D;
+$yellow: #ffb11b;
+$red: #cb1b45;
+$green: #00aa90;
+
+$title-width: 250px;
+$sidebar-width: 250px;
+$body-width: 1200px;
+
+@mixin primary-color {
+  color: $white;
+  background-color: $black;
+}
+
+@mixin secondary-color {
+  color: $black;
+  background-color: $white;
+}
+
+@mixin warning-color {
+  color: $white;
+  background-color: $red;
+}
+
+@mixin notice-color {
+  color: $white;
+  background-color: $green;
+}
+
+body {
+  font-size: 20px;
+  font-family: Arial, Verdana;
+  @include primary-color;
+  word-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+p {
+  padding-bottom: 14px;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.container {
+  width: $body-width;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* header */
+
+#HEADER {
+}
+
+  #sitename {
+    float: left;
+    width: $title-width;
+  }
+  
+  #menubar {
+    float: left;
+    width: $body-width - $title-width;
+  }
+  
+  h1 {
+    font-weight: bold;
+    font-size: 32px;
+    padding: 15px 0;
+  }
+  .menu {
+    margin-bottom: 15px;
+    font-size: 12px;
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    & > li{
+      float: left;
+      width: 150px;
+      text-align: center;
+    }
+    a {
+      padding: 10px;
+      color: $white;
+      display: block;
+      
+      &:hover {
+        background: $yellow;
+      }
+    }
+  }
+  
+/* sidebar */
+#sidebar {
+  border-right: 10px solid $yellow;
+  border-bottom: 1px solid $white;
+  padding: 15px;
+  float: left;
+  width: $sidebar-width - 15*2 - 8;
+  //background: #0ff;
+  
+  &:hover {
+    color: $yellow;
+    border-color: $yellow;
+  }
+  
+}
+
+/* posts */
+#posts {
+  padding: 15px;
+  float: right;
+  width: $body-width - $sidebar-width - 32px;
+  background: $white;
+}
+
+.article {
+  @include secondary-color;
+  margin: 50px;
+  padding: 30px;
+  
+  h1 {
+    @include primary-color;
+    font-size: 32px;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    padding: 5px;
+    border-left: 10px solid $black;
+    border-bottom:2px solid $black;
+    margin-bottom: 30px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    border-bottom:2px solid $black;
+    margin: 15px 60px;
+  }
+  
+  p {
+    margin: 15px 60px;
+  }
+  
+  .round {
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .notice {
+    @include notice-color;
+  }
+  
+  .warning {
+    @include warning-color;
+  }
+  
+}
+
+
+/* footer */
+#footer {
+  margin-top: 50px;
+  padding: 15px 0;
+  font-size: 12px;
+  color: #aaa;
+  border-top: 1px solid #ccc;
+}
+
